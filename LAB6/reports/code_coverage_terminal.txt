@@ -9,7 +9,7 @@ LAB6> python -m coverage run --data-file=.coverage.code --source=laundry_service
     config.cache.set("cache/nodeids", sorted(str(n) for n in self.cached_nodeids))
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-20 passed, 1 warning in 0.06s
+20 passed, 1 warning in 0.07s
 LAB6> python -m coverage report --data-file=.coverage.code --show-missing --fail-under=90
 Name                 Stmts   Miss  Cover   Missing
 --------------------------------------------------

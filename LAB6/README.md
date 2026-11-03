@@ -67,6 +67,8 @@ Run both test files together without replacing the separate reports:
 - [Branch coverage terminal screenshot](screenshots/branch_coverage.png)
 - [Branch terminal transcript](reports/branch_coverage_terminal.txt)
 - [Machine-readable branch report](reports/branch_coverage.json)
+- [Code report screenshot from the latest run](reports/code_coverage_screenshot.png)
+- [Branch report screenshot from the latest run](reports/branch_coverage_screenshot.png)
 
 The screenshots are direct Windows terminal captures of the code and branch
 coverage runs using `run_coverage.py`. Each shows the final coverage percentages.
