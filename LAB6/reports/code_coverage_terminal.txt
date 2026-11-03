@@ -1,0 +1,17 @@
+LAB 6 - CODE (STATEMENT) COVERAGE
+Python 3.12.10
+
+LAB6> python -m coverage run --data-file=.coverage.code --source=laundry_service -m pytest test_code_coverage.py -q
+....................                                                                                   [100%]
+20 passed in 0.07s
+LAB6> python -m coverage report --data-file=.coverage.code --show-missing --fail-under=90
+Name                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+laundry_service.py      37      0   100%
+--------------------------------------------------
+TOTAL                   37      0   100%
+LAB6> python -m coverage json --data-file=.coverage.code --pretty-print -o reports/code_coverage.json
+Wrote JSON report to reports/code_coverage.json
+
+Statement coverage: 100.00% (37/37 statements)
+PASS - minimum required: 90%
