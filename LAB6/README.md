@@ -61,6 +61,7 @@ Run both test files together without replacing the separate reports:
 
 ## Evidence
 
+- [PDF report: full test listings, terminal screenshots and coverage results](reports/LAB6_Coverage_Report.pdf)
 - [Code coverage terminal screenshot](screenshots/code_coverage.png)
 - [Raw terminal transcript](reports/code_coverage_terminal.txt)
 - [Machine-readable coverage report](reports/code_coverage.json)
