@@ -68,9 +68,9 @@ Run both test files together without replacing the separate reports:
 - [Branch terminal transcript](reports/branch_coverage_terminal.txt)
 - [Machine-readable branch report](reports/branch_coverage.json)
 
-The screenshots capture a local xterm.js terminal streaming real invocations of
-`run_coverage.py`. Their output is produced by the commands, not retyped or generated
-as illustrations. The raw transcripts and JSON reports provide the underlying evidence.
+The screenshots are direct Windows terminal captures of the code and branch
+coverage runs using `run_coverage.py`. Each shows the final coverage percentages.
+The matching raw transcripts and JSON reports provide the underlying evidence.
 
 ## Separate commits
 
