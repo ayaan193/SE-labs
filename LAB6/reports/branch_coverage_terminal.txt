@@ -1,0 +1,18 @@
+LAB 6 - BRANCH COVERAGE
+Python 3.12.10
+
+LAB6> python -m coverage run --data-file=.coverage.branch --branch --source=laundry_service -m pytest test_branch_coverage.py -q
+.......................................................................                                [100%]
+71 passed in 0.21s
+LAB6> python -m coverage report --data-file=.coverage.branch --show-missing --fail-under=90
+Name                 Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------
+laundry_service.py      37      0     26      0   100%
+----------------------------------------------------------------
+TOTAL                   37      0     26      0   100%
+LAB6> python -m coverage json --data-file=.coverage.branch --pretty-print -o reports/branch_coverage.json
+Wrote JSON report to reports/branch_coverage.json
+
+Statement coverage: 100.00% (37/37 statements)
+Branch coverage: 100.00% (26/26 branch outcomes)
+PASS - minimum required: 90%

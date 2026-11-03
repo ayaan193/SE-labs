@@ -16,7 +16,7 @@ MINIMUM = 90.0
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=["code"])
+    parser.add_argument("mode", choices=["code", "branch"])
     mode = parser.parse_args().mode
     REPORTS.mkdir(exist_ok=True)
     transcript = []
@@ -46,13 +46,14 @@ def main():
     report = f"reports/{mode}_coverage.json"
     exit_code = 0
     try:
-        emit("LAB 6 - CODE (STATEMENT) COVERAGE")
+        emit("LAB 6 - " + ("BRANCH COVERAGE" if mode == "branch" else "CODE (STATEMENT) COVERAGE"))
         emit(f"Python {sys.version.split()[0]}")
         emit()
+        branch_options = ["--branch"] if mode == "branch" else []
         run(
             "-m", "coverage", "run", f"--data-file={data}",
-            "--source=laundry_service", "-m", "pytest",
-            "test_code_coverage.py", "-q",
+            *branch_options, "--source=laundry_service", "-m", "pytest",
+            f"test_{mode}_coverage.py", "-q",
         )
         run(
             "-m", "coverage", "report", f"--data-file={data}",
@@ -70,6 +71,16 @@ def main():
         emit(f"Statement coverage: {percent:.2f}% ({covered}/{total} statements)")
         if percent < MINIMUM:
             raise RuntimeError(f"Coverage is below the required {MINIMUM:.0f}%")
+        if mode == "branch":
+            covered_branches = totals["covered_branches"]
+            total_branches = totals["num_branches"]
+            branch_percent = 100.0 * covered_branches / total_branches
+            emit(
+                f"Branch coverage: {branch_percent:.2f}% "
+                f"({covered_branches}/{total_branches} branch outcomes)"
+            )
+            if branch_percent < MINIMUM:
+                raise RuntimeError(f"Branch coverage is below {MINIMUM:.0f}%")
         emit(f"PASS - minimum required: {MINIMUM:.0f}%")
     except RuntimeError as error:
         emit(f"FAIL - {error}")
