@@ -1,0 +1,123 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(WindowsPath('C:/Users/Zia Ahmed/Downloads/3rd_Year/SE-labs/LAB7/.hypothesis/examples'))
+rootdir: C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7
+plugins: hypothesis-6.112.1
+collecting ... collected 23 items / 20 deselected / 3 selected
+
+test_processor.py::test_parse_order_no_crash FAILED                      [ 33%]
+test_processor.py::test_weight_average_no_crash FAILED                   [ 66%]
+test_processor.py::test_payable_charge_no_crash FAILED                   [100%]
+
+================================== FAILURES ===================================
+__________________________ test_parse_order_no_crash __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 21, in test_parse_order_no_crash
+  |     @given(arbitrary_input)
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 23, in test_parse_order_no_crash
+    |     result = app.parse_order(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 3, in parse_order
+    |     return garment.strip().title(), float(kg)
+    |                                     ^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | Falsifying example: test_parse_order_no_crash(
+    |     value=':',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 23, in test_parse_order_no_crash
+    |     result = app.parse_order(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 2, in parse_order
+    |     garment, kg = text.split(':')
+    |     ^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Falsifying example: test_parse_order_no_crash(
+    |     value='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 23, in test_parse_order_no_crash
+    |     result = app.parse_order(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 2, in parse_order
+    |     garment, kg = text.split(':')
+    |                   ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Falsifying example: test_parse_order_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    +------------------------------------
+________________________ test_weight_average_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 31, in test_weight_average_no_crash
+  |     @given(arbitrary_input)
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 33, in test_weight_average_no_crash
+    |     result = app.weight_average(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 6, in weight_average
+    |     values = [int(r) for r in weights_csv.split(',')]
+    |               ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Falsifying example: test_weight_average_no_crash(
+    |     value='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 33, in test_weight_average_no_crash
+    |     result = app.weight_average(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 6, in weight_average
+    |     values = [int(r) for r in weights_csv.split(',')]
+    |                               ^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Falsifying example: test_weight_average_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    +------------------------------------
+________________________ test_payable_charge_no_crash _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 38, in test_payable_charge_no_crash
+  |     @given(arbitrary_input)
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 40, in test_payable_charge_no_crash
+    |     result = app.payable_charge(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 10, in payable_charge
+    |     charge, discount = text.split('|')
+    |     ^^^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Falsifying example: test_payable_charge_no_crash(
+    |     value='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\test_processor.py", line 40, in test_payable_charge_no_crash
+    |     result = app.payable_charge(value)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\processor_original.py", line 10, in payable_charge
+    |     charge, discount = text.split('|')
+    |                        ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Falsifying example: test_payable_charge_no_crash(
+    |     value=None,  # or any other generated value
+    | )
+    +------------------------------------
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_parse_order_no_crash - ExceptionGroup: Hypothe...
+FAILED test_processor.py::test_weight_average_no_crash - ExceptionGroup: Hypo...
+FAILED test_processor.py::test_payable_charge_no_crash - ExceptionGroup: Hypo...
+====================== 3 failed, 20 deselected in 20.05s ======================

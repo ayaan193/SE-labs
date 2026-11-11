@@ -1,0 +1,106 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(WindowsPath('C:/Users/Zia Ahmed/Downloads/3rd_Year/SE-labs/LAB7/.hypothesis/examples'))
+rootdir: C:\Users\Zia Ahmed\Downloads\3rd_Year\SE-labs\LAB7
+plugins: hypothesis-6.112.1
+collecting ... collected 23 items
+
+test_processor.py::test_parse_order_no_crash PASSED                      [  4%]
+test_processor.py::test_weight_average_no_crash PASSED                   [  8%]
+test_processor.py::test_payable_charge_no_crash PASSED                   [ 13%]
+test_processor.py::test_parse_order_valid PASSED                         [ 17%]
+test_processor.py::test_weight_average_valid PASSED                      [ 21%]
+test_processor.py::test_payable_charge_valid PASSED                      [ 26%]
+test_processor.py::test_invalid_inputs_are_rejected[parse_order-None] PASSED [ 30%]
+test_processor.py::test_invalid_inputs_are_rejected[parse_order-] PASSED [ 34%]
+test_processor.py::test_invalid_inputs_are_rejected[parse_order-regular:-1] PASSED [ 39%]
+test_processor.py::test_invalid_inputs_are_rejected[parse_order-regular:nan] PASSED [ 43%]
+test_processor.py::test_invalid_inputs_are_rejected[parse_order-regular:inf] PASSED [ 47%]
+test_processor.py::test_invalid_inputs_are_rejected[parse_order-unknown:5] PASSED [ 52%]
+test_processor.py::test_invalid_inputs_are_rejected[weight_average-None] PASSED [ 56%]
+test_processor.py::test_invalid_inputs_are_rejected[weight_average-] PASSED [ 60%]
+test_processor.py::test_invalid_inputs_are_rejected[weight_average-3,,5] PASSED [ 65%]
+test_processor.py::test_invalid_inputs_are_rejected[weight_average--1,5] PASSED [ 69%]
+test_processor.py::test_invalid_inputs_are_rejected[weight_average-nan,5] PASSED [ 73%]
+test_processor.py::test_invalid_inputs_are_rejected[payable_charge-None] PASSED [ 78%]
+test_processor.py::test_invalid_inputs_are_rejected[payable_charge-] PASSED [ 82%]
+test_processor.py::test_invalid_inputs_are_rejected[payable_charge--10|2] PASSED [ 86%]
+test_processor.py::test_invalid_inputs_are_rejected[payable_charge-300|nan] PASSED [ 91%]
+test_processor.py::test_invalid_inputs_are_rejected[payable_charge-1e309|0] PASSED [ 95%]
+test_processor.py::test_fractional_average_regression PASSED             [100%]
+============================ Hypothesis Statistics ============================
+
+test_processor.py::test_parse_order_no_crash:
+
+  - during reuse phase (0.04 seconds):
+    - Typical runtimes: < 1ms, of which < 1ms in data generation
+    - 27 passing examples, 0 failing examples, 0 invalid examples
+
+  - during generate phase (0.53 seconds):
+    - Typical runtimes: ~ 0-1 ms, of which ~ 0-1 ms in data generation
+    - 273 passing examples, 0 failing examples, 68 invalid examples
+    - Events:
+      * 17.30%, Retried draw from text(characters(codec='utf-8', categories=('Zl', 'Zp', 'Co', 'Me', 'Pc', 'Zs', 'Lt', 'Pf', 'Pi', 'Nl', 'Pd', 'Cf', 'Sc', 'Sk', 'Nd', 'Sm', 'Lm', 'No', 'Pe', 'Ps', 'Mc', 'So', 'Po', 'Mn', 'Lo', 'Lu', 'Ll', 'Cn', 'Cc')), max_size=10).filter(not_yet_in_unique_list) to satisfy filter
+
+  - Stopped because settings.max_examples=300
+
+
+test_processor.py::test_weight_average_no_crash:
+
+  - during reuse phase (0.00 seconds):
+    - Typical runtimes: < 1ms, of which < 1ms in data generation
+    - 2 passing examples, 0 failing examples, 0 invalid examples
+
+  - during generate phase (0.60 seconds):
+    - Typical runtimes: ~ 0-1 ms, of which ~ 0-1 ms in data generation
+    - 298 passing examples, 0 failing examples, 95 invalid examples
+    - Events:
+      * 22.14%, Retried draw from text(characters(codec='utf-8', categories=('Zl', 'Zp', 'Co', 'Me', 'Pc', 'Zs', 'Lt', 'Pf', 'Pi', 'Nl', 'Pd', 'Cf', 'Sc', 'Sk', 'Nd', 'Sm', 'Lm', 'No', 'Pe', 'Ps', 'Mc', 'So', 'Po', 'Mn', 'Lo', 'Lu', 'Ll', 'Cn', 'Cc')), max_size=10).filter(not_yet_in_unique_list) to satisfy filter
+
+  - Stopped because settings.max_examples=300
+
+
+test_processor.py::test_payable_charge_no_crash:
+
+  - during reuse phase (0.01 seconds):
+    - Typical runtimes: < 1ms, of which < 1ms in data generation
+    - 4 passing examples, 0 failing examples, 0 invalid examples
+
+  - during generate phase (0.55 seconds):
+    - Typical runtimes: ~ 0-1 ms, of which ~ 0-1 ms in data generation
+    - 296 passing examples, 0 failing examples, 73 invalid examples
+    - Events:
+      * 17.89%, Retried draw from text(characters(codec='utf-8', categories=('Zl', 'Zp', 'Co', 'Me', 'Pc', 'Zs', 'Lt', 'Pf', 'Pi', 'Nl', 'Pd', 'Cf', 'Sc', 'Sk', 'Nd', 'Sm', 'Lm', 'No', 'Pe', 'Ps', 'Mc', 'So', 'Po', 'Mn', 'Lo', 'Lu', 'Ll', 'Cn', 'Cc')), max_size=10).filter(not_yet_in_unique_list) to satisfy filter
+
+  - Stopped because settings.max_examples=300
+
+
+test_processor.py::test_parse_order_valid:
+
+  - during generate phase (0.08 seconds):
+    - Typical runtimes: < 1ms, of which < 1ms in data generation
+    - 100 passing examples, 0 failing examples, 0 invalid examples
+
+  - Stopped because settings.max_examples=100
+
+
+test_processor.py::test_weight_average_valid:
+
+  - during generate phase (0.21 seconds):
+    - Typical runtimes: ~ 0-1 ms, of which ~ 0-1 ms in data generation
+    - 100 passing examples, 0 failing examples, 24 invalid examples
+
+  - Stopped because settings.max_examples=100
+
+
+test_processor.py::test_payable_charge_valid:
+
+  - during generate phase (0.09 seconds):
+    - Typical runtimes: < 1ms, of which < 1ms in data generation
+    - 100 passing examples, 0 failing examples, 0 invalid examples
+
+  - Stopped because settings.max_examples=100
+
+
+============================= 23 passed in 2.21s ==============================
