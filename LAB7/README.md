@@ -99,7 +99,7 @@ PDF via the Google Form in the assignment. Do not include the virtual environmen
 
 ## Completed submission artifacts
 
-- [Consolidated PDF: screenshots and both complete source listings](reports/LAB7_Fuzz_Testing_Report.pdf)
+- [Consolidated PDF: exactly four required screenshots and both complete source listings](reports/LAB7_Fuzz_Testing_Report.pdf)
 - [Original application execution](screenshots/01_original_application.png)
 - [Original fuzz failures](screenshots/02_original_fuzz_failures.png)
 - [Original failure summary](screenshots/03_original_failure_summary.png)
